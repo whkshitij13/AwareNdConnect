@@ -4,6 +4,8 @@ import "../globals.css"
 import { ClerkProvider } from "@clerk/nextjs";
 import { Header } from "@/components/shared/Header";
 import { Footer } from "@/components/shared/Footer";
+import { shadesOfPurple } from "@clerk/themes";
+import { LeftSideBar } from "@/components/shared/LeftSideBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider 
+    appearance={{baseTheme:shadesOfPurple}}>
     <html lang="en">
       <body className={inter.className}>
         <Header/>
