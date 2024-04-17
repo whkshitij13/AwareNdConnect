@@ -7,6 +7,7 @@ import { Footer } from "@/components/shared/Footer";
 import { shadesOfPurple } from "@clerk/themes";
 import { LeftSideBar } from "@/components/shared/LeftSideBar";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,12 +20,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+ 
   return (
     <ClerkProvider 
     appearance={{baseTheme:shadesOfPurple}}>
     <html lang="en">
       <body className={inter.className}>
-        <Header/>
+        <Header  />
         {children}
         <Footer/>
         </body>
