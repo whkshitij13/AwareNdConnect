@@ -8,26 +8,16 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import { LeftSideBar } from "./LeftSideBar";
 
 export const Header = () => {
-  const [toggleSideBar, setToggleSideBar] = useState(false);
-  const handleSideBar = () => {
-    setToggleSideBar(!toggleSideBar);
-  };
+ 
   return (
-    <nav className="sticky bg-purple-900 p-3 flex items-center">
-      {toggleSideBar && <LeftSideBar />}
-      <div className="flex z-30 w-full items-center gap-2">
-        <Link href="/" className="flex items-center flex-1">
-          <Image
-            src="/Images/menu.png"
-            alt="logo"
-            width={24}
-            height={24}
-            className="invert hidden md:block sm:block"
-            onClick={handleSideBar}
-          />
+    <nav className="sticky bg-[#1d0a2b] p-3   border-b-2 border-b-gray-700 flex z-30 w-full items-center gap-2  ">
+     
+    
+    
+        <Link href="/" className="flex items-center ">
+          
           <Image
             src="/Images/logo.png"
             alt="logo"
@@ -36,7 +26,10 @@ export const Header = () => {
             className=" "
           />
           <h1 className="text-xl font-semibold text-gray-300">Aware/Connect</h1>
+          
         </Link>
+        <input type="text" placeholder="Search" className="w-full mx-20 bg-gray-700 py-2 rounded-3xl px-5 "/>
+       
         <div className="ml-auto">
           <div className="block md:hidden">
             <SignedIn>
@@ -63,7 +56,7 @@ export const Header = () => {
             }}
           />
         </div>
-      </div>
+     
     </nav>
   );
 };

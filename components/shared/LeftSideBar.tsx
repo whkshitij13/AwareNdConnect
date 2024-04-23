@@ -17,14 +17,15 @@ export const LeftSideBar = () => {
   const pathname=usePathname();
 
   return (
-    <div className={` hidden md:block sm:block fixed top-0 left-0 pt-20  bg-purple-900 h-screen  flex-col text-xl  mx-auto `}>
-      <div className="flex flex-col flex-1 gap-6 text-center font-semibold p-2  ">
+    <div className={`relative hidden md:block sm:block top-0 left-0 pt-20  bg-[#1d0a2b]  border-r-2 border-r-gray-700    text-xl  mx-auto px-2   `}>
+     
+      <div className=" flex-1 space-y-6 text-center font-semibold p-2  ">
         {sidebarLinks.map((link) => {
           const isActive=(pathname.includes(link.route)&& link.route.length>1 )|| pathname==link.route;
 
           return (
             <Link
-              className={`text-gray-300  flex space-x-2 text-center items-center justify-start px-3 py-2${isActive &&` bg-[#220139] rounded-2xl`}`}
+              className={`text-gray-300  flex space-x-2 text-center items-center justify-start px-3 py-2${isActive &&` bg-[#6a378f7a] rounded-2xl`}`}
               href={link.route}
               key={link.label}
             >
@@ -60,6 +61,7 @@ export const LeftSideBar = () => {
               </SignOutButton>
             </SignedIn>
       </div>
-    </div>
+      </div>
+    
   );
 };
